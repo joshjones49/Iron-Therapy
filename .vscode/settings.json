@@ -6,8 +6,8 @@
             "port": 5432,
             "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "MVPdb",
-            "database": "mvpdb",
+            "name": "GymOx",
+            "database": "gym_ox",
             "username": "postgres"
         }
     ]
