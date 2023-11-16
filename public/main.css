@@ -1,28 +1,27 @@
 * {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-height: 100vh;
-background: linear-gradient(yellow 15%, red 70%);
+    height: 100vh;
+    background: linear-gradient(black 20%, red 90%);
 }
 
-#topContainer {
-height: 200px;
-width: 700px;
-background: rgb(61, 180, 61);
-box-shadow: 0 1em 2em black;
-border-radius: 30px;
+#topDiv {
+    display: flex;
+    height: 250px;
+    width: 100vw;
+    background: gray;
+    opacity: .5;
+    justify-content: space-evenly;
 }
 
-#addBtn {
-width: 70px;
-}
-
-#currentTasks {
-color: white;
-text-shadow: 1px 1px 0px black;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.homeDiv {
+    height: auto;
+    width: 400px;
+    border-left: 12px solid black;
+    border-right: 12px solid black;
+    border-radius: 20px;
 }

@@ -6,17 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+    </style>
 </head>
 <body>
-    <div id="topContainer">
-        <input type="text" placeholder="Things To Do..."
-    </div>    
-    <button id="addBtn">+</button>
-    <div id="bottomContainer">
-        <p id="currentTasks">
-            Current Tasks:
-            <span id="value">0</span>
-        </p>
+    <div id="topDiv">
+        <div id="logoDiv" class="homeDiv"></div>
+        <div id="centerDiv" class="homeDiv"></div>
+        <div id="searchDiv" class="homeDiv">
+            <input type="search" placeholder="Search Gym Ox" class="searchSite"><button class="searchSite">Search</button>
+            <input type="search" placeholder="Search Web" class="searchWeb"><button class searchWeb>Search</button>
+        </div>
     </div>
     <script src="main.mjs"></script>
 </body>

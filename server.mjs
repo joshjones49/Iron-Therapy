@@ -20,9 +20,9 @@ app.use(express.static('public'));
 app.use(express.json());
 //ROUTES=============================
 //get all
-app.get('/api/database', async (req, res) => {
+app.get('/api/gymox', async (req, res) => {
     try {
-        const {rows} = await pool.query('SELECT * FROM _______ ORDER BY id ASC;');
+        const {rows} = await pool.query('SELECT * FROM exercises ORDER BY id ASC;');
         res.status(200).send(rows)
     } catch (error) {
         res.status(500).send('Server Error');
