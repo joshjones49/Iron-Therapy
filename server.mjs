@@ -23,7 +23,7 @@ app.use(express.json());
 app.get('/api/gymox', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM exercises ORDER BY id ASC;');
-        res.status(200).send(rows)
+        res.status(200).json(rows)
     } catch (error) {
         res.status(500).send('Server Error');
         console.log(error);
