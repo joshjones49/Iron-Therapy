@@ -29,6 +29,24 @@ app.get('/api/gymox', async (req, res) => {
         console.log(error);
     }
 });
+
+app.get('/api/gymox/:movement', async (req, res) => {
+    const movement = req.params.movement;
+    console.log(movement);
+    try {
+        const {rows} = await pool.query('SELECT * FROM exercises WHERE movement LIKE $1', [`%${movement}%`]);
+        if (rows.length === 0) {
+            res.status(404).send('No matching entries');
+            console.log('No matching entries');
+        } else {
+            res.status(200).json(rows);
+            console.log('Entries Found');
+        }
+    } catch (error) {
+        res.json(error)
+        console.log(error);
+    }
+});
 //LISTENER===========================
 app.listen(port, () => {
     console.log('Server Running');

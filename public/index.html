@@ -12,14 +12,27 @@
 </head>
 <body>
     <div id="topDiv">
-        <div id="logoDiv" class="homeDiv"></div>
-        <div id="centerDiv" class="homeDiv"></div>
+        <div id="logoDiv" class="homeDiv">
+
+        </div>
+<!------------------------------------------------->
+        <div id="centerDiv" class="homeDiv">
+            <button id="centerBtn"></button>
+        </div>
+<!---------------------------------------------------->
         <div id="searchDiv" class="homeDiv">
-            <input id="siteInput" type="search" placeholder="Search Gym Ox" class="searchSite"><button id="siteBtn" class="searchSite">Search</button>
+            <input id="nameInput" type="search" placeholder="Search by name" class="bar"><button id="nameBtn" class="submit">Search</button>
             
-            <input id="webInput" type="search" placeholder="Search Web" class="searchWeb"><button id="webBtn" class searchWeb>Search</button>
+            <input id="targetInput" type="search" placeholder="Search by target area" class="bar"><button id="targetBtn" class="submit">Search</button>
         </div>
     </div>
+    <div id="bottomDiv">
+        <div id="leftDiv" class="holderDivs"></div>
+        <div id="midDiv" class="holderDivs"></div>
+        <div id="rightDiv" class="holderDivs"></div>
+    </div>
+
+
     <script type="module" src="main.mjs"></script>
 </body>
 </html>
