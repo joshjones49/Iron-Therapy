@@ -18,4 +18,6 @@ const $centerBtn = $('#centerBtn');
 $centerBtn.on('click', route.getAll);
 
 //get similar
-$nameBtn.on('click', route.getSimilar)
+$nameBtn.on('click', route.getSimilar);
+
+//create 1
