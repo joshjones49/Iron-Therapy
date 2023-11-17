@@ -1,23 +1,22 @@
-//IMPORT & EXPORTS FUNCTIONS==============
+//IMPORTS==============
 import * as route from './functions.mjs';
-export function getNameInput() {
-    return $nameInput.val()
-}
 //HTML ELEMENTS==================
-const $body = $('#body');
-const $logoDiv = $('#logoDiv');
-const $centerDiv = $('#centerDiv');
-const $searchDiv = $('#searchDiv');
-const $nameInput = $('#nameInput');
-const $nameBtn = $('#nameBtn');
-const $targetInput = $('#targetInput');
-const $targetBtn = $('#targetBtn');
-const $centerBtn = $('#centerBtn');
+const body = document.querySelector('#body')
+const topDiv = document.querySelector('#topDiv')
+export const bottomDiv = document.querySelector('#bottomDiv')
+const logoDiv = document.querySelector('#logoDiv');
+const centerDiv = document.querySelector('#centerDiv');
+const searchDiv = document.querySelector('#searchDiv');
+export const nameInput = document.querySelector('#nameInput');
+const nameBtn = document.querySelector('#nameBtn');
+const targetInput = document.querySelector('#targetInput');
+const targetBtn = document.querySelector('#targetBtn');
+const centerBtn = document.querySelector('#centerBtn');
 //ROUTES==========================
 //get all
-$centerBtn.on('click', route.getAll);
+centerBtn.addEventListener('click', route.getAll);
 
 //get similar
-$nameBtn.on('click', route.getSimilar);
+nameBtn.addEventListener('click', route.getSimilar);
 
 //create 1
