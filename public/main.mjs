@@ -1,22 +1,25 @@
 //IMPORTS==============
 import * as route from './functions.mjs';
 //HTML ELEMENTS==================
-const body = document.querySelector('#body')
-const topDiv = document.querySelector('#topDiv')
 export const bottomDiv = document.querySelector('#bottomDiv')
-const logoDiv = document.querySelector('#logoDiv');
-const centerDiv = document.querySelector('#centerDiv');
-const searchDiv = document.querySelector('#searchDiv');
-export const nameInput = document.querySelector('#nameInput');
-const nameBtn = document.querySelector('#nameBtn');
-const targetInput = document.querySelector('#targetInput');
-const targetBtn = document.querySelector('#targetBtn');
-const centerBtn = document.querySelector('#centerBtn');
+export const searchBar = document.querySelector('#searchBar');
+export const searchBtn = document.querySelector('#searchBtn');
+export const libBtn = document.querySelector('#libBtn');
+export const loremDiv = document.querySelector('#lorem')
+export const createBtn = document.querySelector('#createBtn')
 //ROUTES==========================
+
 //get all
-centerBtn.addEventListener('click', route.getAll);
+libBtn.addEventListener('click', route.getAll);
 
 //get similar
-nameBtn.addEventListener('click', route.getSimilar);
+searchBtn.addEventListener('click', route.getSimilar);
 
-//create 1
+//open creator
+createBtn.addEventListener('click', route.getCreator);
+
+//post workout
+route.submitBtn.addEventListener('click', route.submit)
+
+//patch workout
+// .addEventListener('dblclick', postEdit)

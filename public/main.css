@@ -2,89 +2,157 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Teko';
 }
 
 body {
-    height: auto;
-    background: linear-gradient(rgb(43, 43, 43) 110%, black 80%);
-}
-
-#topDiv {
-    display: flex;
-    height: 250px;
+    display: block;
+    opacity: .85;
     width: 100vw;
-    background: linear-gradient(rgb(43, 43, 43) 80%, black 110%);
-    justify-content: space-evenly;
-    border-bottom: none;
+    height: 100vh;
+    background-image: url('./images/OldGym.jpg');
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-size: cover;
+    overflow: hidden;
 }
 
-
-#centerDiv {
+#topBar {
     display: flex;
+    background-color: rgb(43, 43, 43, 0.8);
+    border-bottom: 3px solid white;
+    width: 100vw;
+    height: 90px;
+    justify-content: space-between;
+    align-content: center;
 }
 
-#centerBtn {
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    background: linear-gradient(white 20%, turquoise 80%);
-    border: 3px solid white;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 1px 15px 20px 1px ;
-}
-
-.bar {
+#searchBar {
     text-align: center;
-    height: 70px;
-    border-radius: 10px;
-    font-family: 'Teko';
     font-size: 30px;
-    box-shadow: 1px 15px 20px black;
-    background: linear-gradient(white 70%, rgb(218, 217, 217) 90%);
-    opacity: .7;
-    border: 1px solid white
+    height: 50px;
+    width: 300px;
+    border: none;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    background: linear-gradient(gray -20%, white 35%)
 }
 
-.submit {
-    background: linear-gradient(white 20%, turquoise 80%);
+#searchBtn {
     color: white;
-    height: 70px;
-    width: 100px;
-    border-radius: 10px;
+    background-color: rgb(42, 42, 77);
+    height: 50px;
+    width: 80px;
+    border: none;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
     cursor: pointer;
-    text-shadow: 4px 4px 2px 20px black;
-    box-shadow: 1px 15px 20px black;
-    border: 1px solid white;
+    margin-top: 17px;
+    margin-right: 55px;
 }
 
-.homeDiv {
+#createBtn {
+    opacity: 1;
+    font-size: 50px;
+    margin-left: 50px;
+    margin-top: 10px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .5s border ease;
+    width: 600px;
+}
+#createBtn:hover {
+    border: 1px solid white;
+    border-left: none;
+    border-top: none;
+}
+
+#headerDiv {
     display: flex;
-    flex-wrap: wrap;
-    height: auto;
-    width: 400px;
-    border-radius: 50px;
-    justify-content: space-evenly;
-    
+    align-items: center;
+    justify-content: baseline;
 }
 
 #bottomDiv {
-    margin-top: 20px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 5;
+    font-size: 100px;
+    margin: 10px 0 30px;
+    line-height: 1;
+    background-color: transparent;
+}
+
+.homeBtns {
+    height: 120px;
+    width: 300px;
+    background-color: transparent;
+    border: 10px solid white;
+    border-radius: 50px;
+    color: white;
+    font-size: 70px;
+    cursor: pointer;
+    transition: .5s background-color ease;
+}
+.homeBtns:hover {
+    background-color: rgb(42, 42, 77);
+}
+
+.pDiv {
+    background-color: rgb(68, 68, 68, 0.8);
+    font-size: 40px;
+    height: 370px;
+    width: 320px;
+    text-align: center;
+    border-radius: 30px;
+    margin-top: 50px;
+    line-height: 1.5;
+}
+#lorem {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    height: 80vh;
-}
-
-.holderDivs {
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
     height: 90%;
-    width: 30%;
-    border-radius: 20px;
-    border: 7px solid ;
-    background: linear-gradient(black -35%, gray 70%, darkgray 100%);
-    box-shadow: 1px -15px 80px black;
+    width: 59%;
+    margin-top: 40px;
+    margin-left: 40%;
+    overflow: auto;
+    
 }
 
-#searchDiv {
-    align-items: center;
+#pDiv2{
+    color: white;
+    
 }
+
+#view {
+    width: 500px;
+}
+
+#logIn {
+    text-align: center;
+    font-size: 70px;
+    margin-top: 50px;
+    width: 500px;
+    background-color: white;
+    color: rgb(42, 42, 77);
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 50%;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+

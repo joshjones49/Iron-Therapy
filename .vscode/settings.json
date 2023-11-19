@@ -1,13 +1,12 @@
 {
     "sqltools.connections": [
         {
-            "previewLimit": 100,
+            "previewLimit": 50,
             "server": "localhost",
             "port": 5432,
-            "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "GymOx",
-            "database": "gym_ox",
+            "name": "IronTherapy",
+            "database": "irontherapy",
             "username": "postgres"
         }
     ]

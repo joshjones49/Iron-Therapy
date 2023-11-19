@@ -11,28 +11,28 @@
     </style>
 </head>
 <body>
-    <div id="topDiv">
-        <div id="logoDiv" class="homeDiv">
-
+    <div id="topBar">
+        <div id="createListDiv">
+             <button id="createBtn">Create Your Own Workout!</button>
         </div>
-<!------------------------------------------------->
-        <div id="centerDiv" class="homeDiv">
-            <button id="centerBtn"></button>
-        </div>
-<!---------------------------------------------------->
-        <div id="searchDiv" class="homeDiv">
-            <input id="nameInput" type="search" placeholder="Search by name" class="bar"><button id="nameBtn" class="submit">Search</button>
-            
-            <input id="targetInput" type="search" placeholder="Search by target area" class="bar"><button id="targetBtn" class="submit">Search</button>
-        </div>
-    </div>
+        
+        <div id="searchDiv">
+            <input id="searchBar" type="search" placeholder="SEARCH"><button id="searchBtn">SEARCH</button>
+        </div>       
+    </div>    
     <div id="bottomDiv">
-        <div id="leftDiv" class="holderDivs"></div>
-        <div id="midDiv" class="holderDivs"></div>
-        <div id="rightDiv" class="holderDivs"></div>
+        <small>Welcome To</small>
+        <h1>Iron Therapy</h1>
+        <button id="libBtn" class="homeBtns">Library</button>
+        <div class="pDiv">
+            <p>Click "Library" to access the the site's exercises. You can also use "Search" to find specific and/or related exercises!</p>
+        </div>
+            <input id="logIn" type="email" class="homeBtns" placeholder="Log-In">
     </div>
-
-
+    <div id="lorem">
+        <button id="view" class="homeBtns">View Workouts</button>
+        <p id="pDiv2" class="pDiv">Click to view member created workouts !</p>
+    </div>
     <script type="module" src="main.mjs"></script>
     <script type="module" src="functions.mjs"></script>
 </body>
