@@ -141,13 +141,35 @@ export function getWorkouts() {
         data.forEach(obj => {
 
             const holder = document.createElement('div')
-            holder.style.display = 'flex'
-            holder.style.flex = 'wrap'
+            holder.style.display = 'block'
             holder.style.overflow = 'auto'
             holder.style.height = '440px'
             holder.style.width = '500px'
             holder.style.borderRadius = '20px'
             holder.style.backgroundColor = 'white'
+            
+            const editBtn = document.createElement('button')
+            editBtn.style.height = '30px'
+            editBtn.style.width = '80px'
+            editBtn.style.backgroundColor = 'green'
+            editBtn.style.fontSize = '80%'
+            editBtn.style.opacity = '1'
+            editBtn.style.border = '2px solid green'
+            editBtn.style.borderRadius = '30px'
+            editBtn.textContent = 'EDIT'
+            editBtn.addEventListener('click', edit1)
+            
+            const deleteBtn = document.createElement('button')
+            deleteBtn.style.height = '30px'
+            deleteBtn.style.width = '80px'
+            deleteBtn.style.backgroundColor = 'crimson'
+            deleteBtn.style.fontSize = '80%'
+            deleteBtn.style.opacity = '1'
+            deleteBtn.style.border = '2px solid red'
+            deleteBtn.style.borderRadius = '30px'
+            deleteBtn.textContent = 'DELETE'
+            deleteBtn.addEventListener('click', () => delete1(obj, holder))
+            holder.append(editBtn, deleteBtn)
             
             const movement = document.createElement('h1')
             movement.innerHTML = `${obj.name}<br>${obj.script}`
@@ -158,6 +180,27 @@ export function getWorkouts() {
         console.log(data);
     })
 
+}
+
+//edit
+function edit1() {
+    
+}
+//delete
+function delete1(workout, div) {
+    div.style.display = 'none'
+    workout = workout.name
+    $.ajax({
+        url: `http://localhost:8000/api/ironT/${workout}`,
+        method: 'DELETE',
+        success: (data) => {
+            console.log('Workout Deleted');
+            console.log(data);
+        },
+        error: (error) => {
+            console.error('Error:', error);
+        }
+    });
 }
 
 const fname = document.querySelector('#firstInput')
