@@ -2,10 +2,10 @@
   "name": "mvp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "node server.mjs"
   },
   "keywords": [],
   "author": "",
