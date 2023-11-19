@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
     background-position: relative;
     background-size: cover;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #topBar {
@@ -157,6 +157,7 @@ body {
 #rightDivNote {
     font-size: 70px;
     color: rgb(42, 42, 77);
+    cursor: default;
 }
 
 .inputs {
@@ -166,17 +167,18 @@ body {
     text-align: center;
     color: rgb(42, 42, 77);
     font-size: 60px;
-    border-radius: 30px;
+    border-bottom: 1px solid red;
 }
 
 #userSub {
     background-color: crimson;
+    margin-top: 200px;
 }
 
 #memberBtn {
     height: 80px;
     font-size: 50px;
-    margin-right: 300px;
+    margin-bottom: 300px;
 }
 
 .italic {
@@ -191,6 +193,6 @@ body {
     border-radius: 50%;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: crimson;
 }
 

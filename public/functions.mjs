@@ -4,6 +4,8 @@ const workoutList = document.createElement('div')
 const logIn = document.querySelector('#logIn')
 export const submitBtn = document.createElement('button')
 const workoutName = document.createElement('input')
+const inputName = document.createElement('input')
+const scriptDiv = document.createElement('div')
 
 export function getAll() {
     $.get('http://localhost:8000/api/ironT', (data) => {
@@ -156,8 +158,9 @@ export function getWorkouts() {
             editBtn.style.opacity = '1'
             editBtn.style.border = '2px solid green'
             editBtn.style.borderRadius = '30px'
+            editBtn.style.cursor = 'pointer'
             editBtn.textContent = 'EDIT'
-            editBtn.addEventListener('click', edit1)
+            editBtn.addEventListener('click', () => edit1(obj))
             
             const deleteBtn = document.createElement('button')
             deleteBtn.style.height = '30px'
@@ -167,6 +170,7 @@ export function getWorkouts() {
             deleteBtn.style.opacity = '1'
             deleteBtn.style.border = '2px solid red'
             deleteBtn.style.borderRadius = '30px'
+            deleteBtn.style.cursor = 'pointer'
             deleteBtn.textContent = 'DELETE'
             deleteBtn.addEventListener('click', () => delete1(obj, holder))
             holder.append(editBtn, deleteBtn)
@@ -183,9 +187,62 @@ export function getWorkouts() {
 }
 
 //edit
-function edit1() {
-    
+function edit1(element) {
+    main.bottomDiv.innerHTML = ''
+    main.bottomDiv.style.display = 'block'
+    main.bottomDiv.contentEditable = true
+    main.bottomDiv.style.color = 'rgb(42, 42, 77)'
+   
+    inputName.style.height = '100px'
+    inputName.style.width = '500px'
+    inputName.style.fontSize = '70px'
+    inputName.placeholder = element.name
+
+    scriptDiv.style.height = '800px'
+    scriptDiv.style.width = '600px'
+    scriptDiv.style.fontSize = '60px'
+    scriptDiv.style.borderRadius = '30px'
+    scriptDiv.style.backgroundColor = 'white'
+    scriptDiv.textContent = element.script
+
+    const editBtn = document.createElement('button')
+    editBtn.style.height = '100px'
+    editBtn.style.width = '300px'
+    editBtn.style.fontSize = '70px'
+    editBtn.style.cursor = 'pointer'
+    editBtn.style.backgroundColor = 'blue'
+    editBtn.style.border = ' none'
+    editBtn.textContent = 'SUBMIT'
+    editBtn.style.color ='white'
+    editBtn.style.border = '7px solid white'
+    editBtn.style.borderRadius = '30px'
+    editBtn.style.backgroundColor = 'crimson'
+    editBtn.addEventListener('click', () => editWorkout(element))
+
+    main.bottomDiv.append(inputName, scriptDiv, editBtn)
 }
+
+//edit
+function editWorkout(element, el1, el2) {
+ const elementId = element.id
+        $.ajax({
+            url: `http://localhost:8000/api/ironT/workout/${elementId}`,
+            method: 'PATCH',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                name: inputName.value,
+                script: scriptDiv.textContent
+            }),
+            success: function(data) {
+                alert('Workout Updated');
+                console.log(data);
+            },
+            error: function(error) {
+                console.error('Error:', error);
+            }
+        });
+        
+    }
 //delete
 function delete1(workout, div) {
     div.style.display = 'none'

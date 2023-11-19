@@ -134,12 +134,13 @@ app.delete('/api/ironT/:workout', async (req, res) => {
 });
 //patch 1======================================
 
-//
-app.patch('/api/ironT/:id', async (req, res) => {
-    const id = req.params.id;
+//workout
+app.patch('/api/ironT/workout/:id', async (req, res) => {
+    const id = req.params.id
+
     const { name, script } = req.body;
 
-    if (!script && !script) {
+    if (!name && !script) {
         return res.status(400).json('At least one field required for update');
     }
     try {
