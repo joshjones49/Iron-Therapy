@@ -41,7 +41,7 @@ export function submit() {
 }
 //CREATE DISPLAY EXERCISES
 function displayExercises(data) {
-    main.createBtn.textContent = 'HOME'
+    main.createBtn.textContent = 'RETURN'
     main.createBtn.addEventListener('click', () => {
         location.reload()
     })
@@ -128,4 +128,59 @@ export function getCreator() {
     })
 
     main.bottomDiv.append(workoutName, workoutList, submitBtn)
+}
+
+//GET WORKOUTS
+export function getWorkouts() {
+    main.loremDiv.innerHTML = ''
+    main.createBtn.textContent = 'RETURN'
+    main.createBtn.addEventListener('click', () => {
+        location.reload()
+    })
+    $.get('http://localhost:8000/api/ironT/workouts', (data) => {
+        data.forEach(obj => {
+
+            const holder = document.createElement('div')
+            holder.style.display = 'flex'
+            holder.style.flex = 'wrap'
+            holder.style.overflow = 'auto'
+            holder.style.height = '440px'
+            holder.style.width = '500px'
+            holder.style.borderRadius = '20px'
+            holder.style.backgroundColor = 'white'
+            
+            const movement = document.createElement('h1')
+            movement.innerHTML = `${obj.name}<br>${obj.script}`
+            holder.append(movement)
+            main.loremDiv.append(holder)
+    
+        });
+        console.log(data);
+    })
+
+}
+
+const fname = document.querySelector('#firstInput')
+const lname = document.querySelector('#lastInput')
+const email = document.querySelector('#emailInput')
+//CREATE USER
+export function createUser() {
+
+    $.ajax({
+        url: 'http://localhost:8000/api/ironT/member',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    fname: fname.value,
+                    lname: lname.value,
+                    email: email.value
+                }),
+                success: () => {
+                    alert('User Saved');
+                },
+                error: () => {
+                    console.error('Error:', error);
+                }
+    })
+    console.log(email.value);
 }

@@ -7,10 +7,13 @@ export const searchBtn = document.querySelector('#searchBtn');
 export const libBtn = document.querySelector('#libBtn');
 export const loremDiv = document.querySelector('#lorem')
 export const createBtn = document.querySelector('#createBtn')
+const viewBtn = document.querySelector('#view')
+const userSub = document.querySelector('#userSub')
 //ROUTES==========================
 
 //get all
 libBtn.addEventListener('click', route.getAll);
+viewBtn.addEventListener('click', route.getWorkouts)
 
 //get similar
 searchBtn.addEventListener('click', route.getSimilar);
@@ -20,6 +23,10 @@ createBtn.addEventListener('click', route.getCreator);
 
 //post workout
 route.submitBtn.addEventListener('click', route.submit)
+
+//post user
+userSub.addEventListener('click', route.createUser)
+
 
 //patch workout
 // .addEventListener('dblclick', postEdit)

@@ -42,6 +42,16 @@ app.get('/api/ironT/workouts', async (req, res) => {
         console.log(error);
     }
 });
+//members
+app.get('/api/ironT/members', async (req, res) => {
+    try {
+        const {rows} = await pool.query('SELECT * FROM member ORDER BY id ASC;');
+        res.status(200).json(rows)
+    } catch (error) {
+        res.status(500).send('Server Error');
+        console.log(error);
+    }
+});
 //get similar
 app.get('/api/ironT/:movement', async (req, res) => {
     const movement = req.params.movement;
@@ -74,25 +84,25 @@ app.post('/api/ironT', async (req, res) => {
             'INSERT INTO workout (name, script) VALUES ($1, $2) RETURNING*',
             [name, script]
         );
-        res.status(201).send(rows[0]);
+        res.status(201).json(rows[0]);
     } catch (error) {
         res.status(500).json(error);
         console.error(error);
     }
 });
 //member
-app.post('/api/ironT', async (req, res) => {
-    const { name, script } = req.body;
+app.post('/api/ironT/member', async (req, res) => {
+    const { fname, lname, email } = req.body;
 
-    if (!name || !script) {
-        return res.status(400).json('Name And List Required');
+    if (!fname || !lname || !email) {
+        return res.status(400).json('All fields required');
     }
      try {
         const {rows} = await pool.query(
-            'INSERT INTO workout (name, script) VALUES ($1, $2) RETURNING*',
-            [name, script]
+            'INSERT INTO member (fname, lname, email) VALUES ($1, $2, $3) RETURNING*',
+            [fname, lname, email]
         );
-        res.status(201).send(rows[0]);
+        res.status(201).json(rows[0]);
     } catch (error) {
         res.status(500).json(error);
         console.error(error);

@@ -114,6 +114,7 @@ body {
     margin-top: 50px;
     line-height: 1.5;
 }
+
 #lorem {
     display: flex;
     flex-wrap: wrap;
@@ -127,13 +128,13 @@ body {
     
 }
 
-#pDiv2{
-    color: white;
-    
+#viewNote {
+    font-size: 30px;
 }
 
 #view {
     width: 500px;
+    height: 170px;
 }
 
 #logIn {
@@ -143,6 +144,33 @@ body {
     width: 500px;
     background-color: white;
     color: rgb(42, 42, 77);
+}
+
+#rightDiv {
+    height: 80%;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#rightDivNote {
+    font-size: 70px;
+    color: rgb(42, 42, 77);
+}
+
+.inputs {
+    border: none;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    color: rgb(42, 42, 77);
+    font-size: 60px;
+    border-radius: 30px;
+}
+
+#userSub {
+    background-color: crimson;
 }
 
 ::-webkit-scrollbar {
