@@ -223,7 +223,7 @@ function edit1(element) {
 }
 
 //edit
-function editWorkout(element, el1, el2) {
+function editWorkout(element) {
  const elementId = element.id
         $.ajax({
             url: `http://localhost:8000/api/ironT/workout/${elementId}`,
@@ -241,7 +241,7 @@ function editWorkout(element, el1, el2) {
                 console.error('Error:', error);
             }
         });
-        
+
     }
 //delete
 function delete1(workout, div) {
