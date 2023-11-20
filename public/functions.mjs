@@ -287,5 +287,5 @@ export function createUser() {
 }
 
 export function getMembers() {
-    getAll
+    getAll()
 }
