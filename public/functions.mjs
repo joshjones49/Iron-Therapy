@@ -304,6 +304,54 @@ export function createUser() {
 
 export function getMembers() {
     main.loremDiv.innerHTML = ''
+    main.createBtn.textContent = 'RETURN'
+    main.createBtn.addEventListener('click', () => {
+        location.reload()
+    })
+    $.get('https://irontherapy.onrender.com/ironT/members', (data) => {
+        data.forEach(obj => {
+
+            const holder = document.createElement('div')
+            holder.style.display = 'block'
+            holder.style.overflow = 'auto'
+            holder.style.height = '440px'
+            holder.style.width = '500px'
+            holder.style.borderRadius = '20px'
+            holder.style.backgroundColor = 'white'
+            
+            const editBtn = document.createElement('button')
+            editBtn.style.height = '30px'
+            editBtn.style.width = '80px'
+            editBtn.style.backgroundColor = 'green'
+            editBtn.style.fontSize = '80%'
+            editBtn.style.opacity = '1'
+            editBtn.style.border = '2px solid green'
+            editBtn.style.borderRadius = '30px'
+            editBtn.style.cursor = 'pointer'
+            editBtn.textContent = 'EDIT'
+            editBtn.addEventListener('click', () => edit1(obj))
+            
+            const deleteBtn = document.createElement('button')
+            deleteBtn.style.height = '30px'
+            deleteBtn.style.width = '80px'
+            deleteBtn.style.backgroundColor = 'crimson'
+            deleteBtn.style.fontSize = '80%'
+            deleteBtn.style.opacity = '1'
+            deleteBtn.style.border = '2px solid red'
+            deleteBtn.style.borderRadius = '30px'
+            deleteBtn.style.cursor = 'pointer'
+            deleteBtn.textContent = 'DELETE'
+            deleteBtn.addEventListener('click', () => delete1(obj, holder))
+            holder.append(editBtn, deleteBtn)
+            
+            const movement = document.createElement('h1')
+            movement.innerHTML = `${obj.fname}<br>${obj.lname}<br>${obj.email}`
+            holder.append(movement)
+            main.loremDiv.append(holder)
+    
+        });
+        console.log(data);
+    })
 
 
 }
