@@ -9,7 +9,7 @@ const scriptDiv = document.createElement('div')
 
 export function getAll() {
     console.log('inside get all function');
-    $.get('https://irontherapy.onrender.com/api/ironT/exercises', (data) => {
+    $.get('https://irontherapy.onrender.com/ironT/exercises', (data) => {
         displayExercises(data) 
     })
 }
@@ -284,4 +284,8 @@ export function createUser() {
                 }
     })
     console.log(email.value);
+}
+
+export function getMembers() {
+    getAll
 }

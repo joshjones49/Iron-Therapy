@@ -9,14 +9,13 @@ export const loremDiv = document.querySelector('#lorem')
 export const createBtn = document.querySelector('#createBtn')
 const viewBtn = document.querySelector('#view')
 const userSub = document.querySelector('#userSub')
+const memberBtn = document.querySelector('#memberBtn')
 //ROUTES==========================
 
 //get all
-libBtn.addEventListener('click', () => {
-    console.log('inside click lib event');
-    route.getAll()
-});
+libBtn.addEventListener('click', route.getAll) 
 viewBtn.addEventListener('click', route.getWorkouts)
+memberBtn.addEventListener('click', route.getMembers)
 
 //get similar
 searchBtn.addEventListener('click', route.getSimilar);
