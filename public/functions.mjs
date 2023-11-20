@@ -8,7 +8,7 @@ const inputName = document.createElement('input')
 const scriptDiv = document.createElement('div')
 
 export function getAll() {
-    $.get('https://irontherapy.onrender.com/ironT', (data) => {
+    $.get('https://irontherapy.onrender.com/ironT/exercises', (data) => {
         displayExercises(data) 
     })
 }
