@@ -261,6 +261,22 @@ function delete1(workout, div) {
     });
 }
 
+function delete1(member, div) {
+    div.style.display = 'none'
+    member = member.email
+    $.ajax({
+        url: `https://irontherapy.onrender.com/ironT/member/${email}`,
+        method: 'DELETE',
+        success: (data) => {
+            console.log(data);
+            alert('Member Deleted');
+        },
+        error: (error) => {
+            console.error('Error:', error);
+        }
+    });
+}
+
 const fname = document.querySelector('#firstInput')
 const lname = document.querySelector('#lastInput')
 const email = document.querySelector('#emailInput')
@@ -268,7 +284,7 @@ const email = document.querySelector('#emailInput')
 export function createUser() {
 
     $.ajax({
-        url: 'https://irontherapy.onrender.com/ironT/member',
+        url: 'https://irontherapy.onrender.com/ironT/postMember',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -287,5 +303,7 @@ export function createUser() {
 }
 
 export function getMembers() {
-    displayExercises()
+    main.loremDiv.innerHTML = ''
+
+
 }

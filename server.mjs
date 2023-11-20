@@ -119,10 +119,10 @@ app.delete('/ironT/workout/:name', async (req, res) => {
     }
 });
 //member
-app.delete('/ironT/:workout', async (req, res) => {
-    const workout = req.params.workout;
+app.delete('/ironT/member/:email', async (req, res) => {
+    const email = req.params.email;
     try {
-        const {rows} = await pool.query('DELETE FROM workout WHERE name = $1', [workout]);
+        const {rows} = await pool.query('DELETE FROM member WHERE email = $1', [email]);
         res.status(200).send(rows);
     } catch (error) {
         res.json(error)
