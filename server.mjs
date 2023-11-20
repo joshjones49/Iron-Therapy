@@ -23,7 +23,7 @@ app.use(express.json());
 //get all
 
 //exercises
-app.get('/api/ironT', async (req, res) => {
+app.get('/ironT/exercises', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM exercises ORDER BY id ASC;');
         res.status(200).json(rows)
@@ -33,7 +33,7 @@ app.get('/api/ironT', async (req, res) => {
     }
 });
 //get workouts 
-app.get('/api/ironT/workouts', async (req, res) => {
+app.get('/ironT/workouts', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM workout ORDER BY id ASC;');
         res.status(200).json(rows)
@@ -43,7 +43,7 @@ app.get('/api/ironT/workouts', async (req, res) => {
     }
 });
 //members
-app.get('/api/ironT/members', async (req, res) => {
+app.get('/ironT/members', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM member ORDER BY id ASC;');
         res.status(200).json(rows)
@@ -53,7 +53,7 @@ app.get('/api/ironT/members', async (req, res) => {
     }
 });
 //get similar
-app.get('/api/ironT/:movement', async (req, res) => {
+app.get('/ironT/:movement', async (req, res) => {
     const movement = req.params.movement;
     console.log(movement);
     try {
@@ -73,7 +73,7 @@ app.get('/api/ironT/:movement', async (req, res) => {
 //create 1================================
 
 //workout
-app.post('/api/ironT', async (req, res) => {
+app.post('/ironT/postWorkout', async (req, res) => {
     const { name, script } = req.body;
 
     if (!name || !script) {
@@ -91,7 +91,7 @@ app.post('/api/ironT', async (req, res) => {
     }
 });
 //member
-app.post('/api/ironT/member', async (req, res) => {
+app.post('/ironT/postMember', async (req, res) => {
     const { fname, lname, email } = req.body;
 
     if (!fname || !lname || !email) {
@@ -111,7 +111,7 @@ app.post('/api/ironT/member', async (req, res) => {
 //delete 1==========================
 
 //workout
-app.delete('/api/ironT/workout/:name', async (req, res) => {
+app.delete('/ironT/workout/:name', async (req, res) => {
     const name = req.params.name;
     try {
         const {rows} = await pool.query('DELETE FROM workout WHERE name = $1', [name]);
@@ -122,7 +122,7 @@ app.delete('/api/ironT/workout/:name', async (req, res) => {
     }
 });
 //member
-app.delete('/api/ironT/:workout', async (req, res) => {
+app.delete('/ironT/:workout', async (req, res) => {
     const workout = req.params.workout;
     try {
         const {rows} = await pool.query('DELETE FROM workout WHERE name = $1', [workout]);
@@ -135,7 +135,7 @@ app.delete('/api/ironT/:workout', async (req, res) => {
 //patch 1======================================
 
 //workout
-app.patch('/api/ironT/workout/:id', async (req, res) => {
+app.patch('/ironT/workout/:id', async (req, res) => {
     const id = req.params.id
 
     const { name, script } = req.body;
