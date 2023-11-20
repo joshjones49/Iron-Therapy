@@ -261,21 +261,21 @@ function delete1(workout, div) {
     });
 }
 
-// function deleteMember(member, div) {
-//     div.style.display = 'none'
-//     member = member.email
-//     $.ajax({
-//         url: `https://irontherapy.onrender.com/ironT/member/${email}`,
-//         method: 'DELETE',
-//         success: (data) => {
-//             console.log(data);
-//             alert('Member Deleted');
-//         },
-//         error: (error) => {
-//             console.error('Error:', error);
-//         }
-//     });
-// }
+function deleteMember(member, div) {
+    div.style.display = 'none'
+    member = member.email
+    $.ajax({
+        url: `https://irontherapy.onrender.com/ironT/member/${member}`,
+        method: 'DELETE',
+        success: (data) => {
+            console.log(data);
+            alert('Member Deleted');
+        },
+        error: (error) => {
+            console.error('Error:', error);
+        }
+    });
+}
 
 const fname = document.querySelector('#firstInput')
 const lname = document.querySelector('#lastInput')
@@ -341,7 +341,7 @@ export function getMembers() {
             deleteBtn.style.borderRadius = '30px'
             deleteBtn.style.cursor = 'pointer'
             deleteBtn.textContent = 'DELETE'
-            deleteBtn.addEventListener('click', () => delete1(obj, holder))
+            deleteBtn.addEventListener('click', () => deleteMember(obj, holder))
             holder.append(editBtn, deleteBtn)
             
             const movement = document.createElement('h1')
