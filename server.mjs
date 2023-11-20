@@ -19,6 +19,7 @@ app.use(express.json());
 //get all
 
 //exercises
+//https://irontherapy.onrender.com/ironT/exercises
 app.get('/ironT/exercises', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM exercises ORDER BY id ASC;');
