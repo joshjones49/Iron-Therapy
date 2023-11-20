@@ -12,7 +12,10 @@ const userSub = document.querySelector('#userSub')
 //ROUTES==========================
 
 //get all
-libBtn.addEventListener('click', route.getAll);
+libBtn.addEventListener('click', () => {
+    console.log('inside click lib event');
+    route.getAll()
+});
 viewBtn.addEventListener('click', route.getWorkouts)
 
 //get similar
