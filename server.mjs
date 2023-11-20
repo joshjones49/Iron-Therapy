@@ -20,13 +20,15 @@ app.use(express.json());
 
 //exercises
 //https://irontherapy.onrender.com/ironT/exercises
+//https://irontherapy.onrender.com/ironT/exercises
 app.get('/ironT/exercises', async (req, res) => {
     try {
         const {rows} = await pool.query('SELECT * FROM exercises ORDER BY id ASC;');
         res.status(200).json(rows)
     } catch (error) {
-        res.status(500).send('Server Error');
         console.log(error);
+        res.status(500).send(error);
+        
     }
 });
 //get workouts 
