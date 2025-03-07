@@ -9,7 +9,7 @@ body {
     display: block;
     opacity: .85;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     background-image: url('./images/OldGym.jpg');
     background-repeat: no-repeat;
     background-position: relative;
@@ -22,16 +22,16 @@ body {
     background-color: rgb(43, 43, 43, 0.8);
     border-bottom: 3px solid white;
     width: 100vw;
-    height: 90px;
-    justify-content: space-between;
+    height: 80px;
+    justify-content: space-around;
     align-content: center;
 }
 
 #searchBar {
     text-align: center;
     font-size: 30px;
-    height: 50px;
-    width: 300px;
+    height: 40px;
+    width: 200px;
     border: none;
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
@@ -41,7 +41,7 @@ body {
 #searchBtn {
     color: white;
     background-color: rgb(42, 42, 77);
-    height: 50px;
+    height: 40px;
     width: 80px;
     border: none;
     border-bottom-right-radius: 50px;
@@ -53,16 +53,15 @@ body {
 
 #createBtn {
     opacity: 1;
-    font-size: 50px;
-    margin-left: 50px;
+    font-size: 40px;
     margin-top: 10px;
     color: white;
     background-color: transparent;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     transition: .5s border ease;
-    width: 600px;
+    width: fit-content;
 }
 #createBtn:hover {
     border: 1px solid white;
@@ -83,7 +82,7 @@ body {
     left: 5%;
     transform: translateY(-50%);
     z-index: 5;
-    font-size: 100px;
+    font-size: 60px;
     margin: 10px 0 30px;
     line-height: 1;
     background-color: transparent;
@@ -106,13 +105,19 @@ body {
 
 .pDiv {
     background-color: rgb(68, 68, 68, 0.8);
-    font-size: 40px;
-    height: 370px;
-    width: 320px;
+    font-size: 30px;
+    height: 300px;
+    width: 350px;
     text-align: center;
     border-radius: 30px;
     margin-top: 50px;
     line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+.pDiv > p {
+    margin: 3px;
 }
 
 #lorem {
@@ -129,12 +134,14 @@ body {
 }
 
 #viewNote {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #view {
-    width: 500px;
-    height: 170px;
+    width: 450px;
+    height: 150px;
+    font-size: 50px;
+    margin-right: 1em;
 }
 
 #logIn {
@@ -148,14 +155,17 @@ body {
 
 #rightDiv {
     height: 80%;
-    width: 500px;
+    width: 400px;
+    margin-left: 1em;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 #rightDivNote {
-    font-size: 70px;
+    font-size: 50px;
     color: rgb(42, 42, 77);
     cursor: default;
 }
@@ -172,13 +182,25 @@ body {
 
 #userSub {
     background-color: crimson;
-    margin-top: 200px;
+    height: 70px;
+    width: 200px;
+    font-size: 40px;
+    transition: .2s ease-in-out;
+    border: none;
+}
+
+#userSub:hover {
+    background-color: green;
 }
 
 #memberBtn {
-    height: 80px;
-    font-size: 50px;
+    height: 60px;
+    font-size: 40px;
     margin-bottom: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid white;
 }
 
 .italic {
