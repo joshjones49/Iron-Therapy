@@ -9,14 +9,14 @@ const scriptDiv = document.createElement('div')
 
 export function getAll() {
     console.log('inside get all function');
-    $.get('https://irontherapy.onrender.com/ironT/exercises', (data) => {
+    $.get('http://localhost:8000/ironT/exercises', (data) => {
         displayExercises(data) 
     })
 }
 
 export function getSimilar(movement) { 
     movement = main.searchBar.value;
-    $.get(`https://irontherapy.onrender.com/ironT/${movement}`, (data) => {
+    $.get(`http://localhost:8000/ironT/${movement}`, (data) => {
         console.log(data);
         displayExercises(data)
     })
@@ -26,7 +26,7 @@ export function getSimilar(movement) {
 export function submit() {
     
     $.ajax({
-        url: 'https://irontherapy.onrender.com/ironT/postWorkout',
+        url: 'http://localhost:8000/ironT/postWorkout',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -140,7 +140,7 @@ export function getWorkouts() {
     main.createBtn.addEventListener('click', () => {
         location.reload()
     })
-    $.get('https://irontherapy.onrender.com/ironT/workouts', (data) => {
+    $.get('http://localhost:8000/ironT/workouts', (data) => {
         data.forEach(obj => {
 
             const holder = document.createElement('div')
@@ -227,7 +227,7 @@ function edit1(element) {
 function editWorkout(element) {
  const elementId = element.id
         $.ajax({
-            url: `https://irontherapy.onrender.com/ironT/workout/${elementId}`,
+            url: `http://localhost:8000/ironT/workout/${elementId}`,
             method: 'PATCH',
             contentType: 'application/json',
             data: JSON.stringify({
@@ -249,7 +249,7 @@ function delete1(workout, div) {
     div.style.display = 'none'
     workout = workout.name
     $.ajax({
-        url: `https://irontherapy.onrender.com/ironT/workout/${workout}`,
+        url: `http://localhost:8000/ironT/workout/${workout}`,
         method: 'DELETE',
         success: (data) => {
             console.log('Workout Deleted');
@@ -265,7 +265,7 @@ function deleteMember(member, div) {
     div.style.display = 'none'
     member = member.email
     $.ajax({
-        url: `https://irontherapy.onrender.com/ironT/member/${member}`,
+        url: `http://localhost:8000/ironT/member/${member}`,
         method: 'DELETE',
         success: (data) => {
             console.log(data);
@@ -284,7 +284,7 @@ const email = document.querySelector('#emailInput')
 export function createUser() {
 
     $.ajax({
-        url: 'https://irontherapy.onrender.com/ironT/postMember',
+        url: 'http://localhost:8000/ironT/postMember',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -308,7 +308,7 @@ export function getMembers() {
     main.createBtn.addEventListener('click', () => {
         location.reload()
     })
-    $.get('https://irontherapy.onrender.com/ironT/members', (data) => {
+    $.get('http://localhost:8000/ironT/members', (data) => {
         data.forEach(obj => {
 
             const holder = document.createElement('div')

@@ -1,14 +1,14 @@
 {
     "sqltools.connections": [
         {
-            "pgOptions": {
-                "ssl": true
-            },
-            "previewLimit": 100,
+            "previewLimit": 60,
             "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
             "driver": "PostgreSQL",
-            "name": "irontherapy",
-            "connectString": "postgres://irontherapy_user:oyjFhc5Pu8xgPUY7WFje000sWgaVf9|B@dpg-clcusseg|b2c73f2a3hg-a.oregon-postgres.render.com/irontherapy"
+            "name": "ironttherapy",
+            "database": "irontherapy",
+            "username": "postgres"
         }
     ]
 }
